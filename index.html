@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedat Kaya | Front-end Developer</title>
+    <meta
+      name="description"
+      content="Vedat Kaya. Front-end geliştirici. SorSana, Wordi ve seçili çalışmalar."
+    />
+    <meta name="theme-color" content="#070707" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script src="/intro-gate.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vedat Kaya | Front-end Developer" />
+    <meta
+      property="og:description"
+      content="Vedat Kaya. Front-end geliştirici. Arayüz ve hareket."
+    />
+    <meta property="og:image" content="/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og.jpg" />
+  </head>
+  <body>
+    <div class="preloader" aria-hidden="false">
+      <div class="counter">0%</div>
+      <video
+        id="intro-video"
+        muted
+        playsinline
+        preload="auto"
+        src="/media/intro.mp4"
+      ></video>
+      <button type="button" class="preloader-skip" id="preloader-skip">
+        Geç
+      </button>
+    </div>
+
+    <div class="cursor-dot"></div>
+
+    <header class="navbar full-navbar">
+      <div class="nav-left">
+        <div class="nav-avatar">
+          <img src="/avatar.webp" alt="" width="84" height="84" />
+          <div class="online-dot"></div>
+        </div>
+        <span class="nav-logo">Vedat Kaya.</span>
+      </div>
+      <div class="nav-links-wrapper">
+        <nav class="nav-center">
+          <a href="#felsefem">Felsefem</a>
+          <a href="#projeler">Çalışmalarım</a>
+          <a href="#iletisim">İletişim</a>
+          <a href="#cv" data-cv id="cv-trigger">CV ↗</a>
+        </nav>
+        <div class="nav-divider"></div>
+        <div class="nav-right">
+          <a
+            href="https://linkedin.com/in/vedat-kaya-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.84v1.98h.05c.54-1.02 1.86-2.1 3.83-2.1 4.1 0 4.86 2.7 4.86 6.21V23h-4v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.51V23h-3.82V8.5z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/vedat-kaya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.11 2.51.33 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <header class="navbar-mini hover-target" id="navbar-mini" title="Yukarı Çık">
+      <div class="nav-left">
+        <div class="nav-avatar">
+          <img src="/avatar.webp" alt="" width="84" height="84" />
+          <div class="online-dot"></div>
+        </div>
+        <span class="nav-logo">Vedat Kaya.</span>
+      </div>
+      <div class="mini-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <button
+        class="hamburger-btn"
+        id="mobile-menu-open"
+        type="button"
+        aria-label="Menüyü aç"
+      >
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <div class="nav-left">
+          <div class="nav-avatar">
+            <img src="/avatar.webp" alt="" width="84" height="84" />
+            <div class="online-dot"></div>
+          </div>
+          <span class="nav-logo">Vedat Kaya.</span>
+        </div>
+        <button
+          class="hamburger-btn"
+          id="mobile-menu-close"
+          type="button"
+          aria-label="Menüyü kapat"
+        >
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#felsefem" class="mobile-link">Felsefem</a>
+        <a href="#projeler" class="mobile-link">Çalışmalarım</a>
+        <a href="#iletisim" class="mobile-link">İletişim</a>
+        <a href="#cv" class="mobile-link" data-cv id="cv-mobile-link">CV ↗</a>
+      </div>
+      <div class="mobile-nav-socials">
+        <a
+          href="https://linkedin.com/in/vedat-kaya-dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon"
+          aria-label="LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.84v1.98h.05c.54-1.02 1.86-2.1 3.83-2.1 4.1 0 4.86 2.7 4.86 6.21V23h-4v-6.67c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.73-2.55 3.51V23h-3.82V8.5z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://github.com/vedat-kaya"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon"
+          aria-label="GitHub"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.11 2.51.33 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <section class="hero">
+        <div class="hero-wrapper" id="hero-reveal">
+          <h1 class="hero-title hover-target">
+            BEYOND<br />
+            <span class="code-line">
+              THE CODE<span class="music-wrapper hover-target"
+                ><span class="music-dot" id="music-btn">
+                  <svg class="icon-play" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                  </svg> </span
+              ></span>
+            </span>
+          </h1>
+          <p class="hero-subtitle">
+            Front-end geliştirici. Arayüz ve hareket.
+          </p>
+        </div>
+        <div class="scroll-indicator">
+          <span class="scroll-text">SCROLL</span>
+          <div class="scroll-line"><div class="scroll-dot"></div></div>
+        </div>
+      </section>
+
+      <section id="felsefem" class="manifesto">
+        <p class="manifesto-text hover-target">
+          <span class="word">Audentes</span>
+          <span class="word">fortuna</span>
+          <span class="word">iuvat.</span>
+        </p>
+      </section>
+
+      <section id="projeler" class="work-stage">
+        <article class="work-piece">
+          <div class="work-still hover-target" data-parallax>
+            <a
+              class="work-still-link"
+              href="/work/sorsana.html"
+              aria-label="SorSana case study"
+            >
+              <img
+                src="/sorsana.webp"
+                alt="SorSana arayüzünden bir kare"
+                class="project-image"
+                width="1600"
+                height="900"
+              />
+            </a>
+            <div class="work-copy">
+              <p class="work-kind">Quiz platformu</p>
+              <a href="/work/sorsana.html" class="work-name-link">
+                <h2 class="work-name">SorSana</h2>
+              </a>
+              <p class="work-tech">Python · Flask · MySQL</p>
+              <div class="work-links">
+                <a href="/work/sorsana.html">Case study</a>
+                <a
+                  href="https://sorsana.pythonanywhere.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-piece">
+          <div class="work-still hover-target" data-parallax>
+            <a
+              class="work-still-link"
+              href="/work/wordi.html"
+              aria-label="Wordi case study"
+            >
+              <img
+                src="/wordi.webp"
+                alt="Wordi arayüzünden bir kare"
+                class="project-image"
+                width="1600"
+                height="900"
+              />
+            </a>
+            <div class="work-copy">
+              <p class="work-kind">Kelime oyunu</p>
+              <a href="/work/wordi.html" class="work-name-link">
+                <h2 class="work-name">Wordi</h2>
+              </a>
+              <p class="work-tech">JavaScript · Vite · CSS3</p>
+              <div class="work-links">
+                <a href="/work/wordi.html">Case study</a>
+                <a
+                  href="https://wordi.pythonanywhere.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer id="iletisim" class="site-footer">
+        <div class="footer-top">
+          <div class="footer-col">
+            <h4 class="footer-heading">MENU</h4>
+            <a href="#">Ana Sayfa</a>
+            <a href="#projeler">Çalışmalarım</a>
+            <a href="#felsefem">Felsefem</a>
+            <a href="#cv" data-cv id="cv-footer-trigger">Özgeçmiş</a>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">CONNECT</h4>
+            <a
+              href="https://linkedin.com/in/vedat-kaya-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn ↗</a
+            >
+            <a
+              href="https://github.com/vedat-kaya"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub ↗</a
+            >
+            <a href="mailto:vedatline@gmail.com">Email</a>
+          </div>
+          <div class="footer-col say-hello">
+            <h4 class="footer-heading">SAY HELLO</h4>
+            <a href="mailto:vedatline@gmail.com" class="footer-email"
+              >vedatline@gmail.com</a
+            >
+            <div class="status-indicator">
+              <div class="status-dot"></div>
+              <span>Ankara. İş için yazabilirsin.</span>
+            </div>
+            <form class="contact-form" id="contact-form" novalidate>
+              <label class="visually-hidden" for="contact-company"
+                >Şirket</label
+              >
+              <input
+                class="visually-hidden"
+                id="contact-company"
+                type="text"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+              />
+              <input
+                type="text"
+                name="name"
+                placeholder="Ad"
+                required
+                minlength="2"
+                maxlength="80"
+                autocomplete="name"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="E-posta"
+                required
+                maxlength="254"
+                autocomplete="email"
+              />
+              <textarea
+                name="message"
+                placeholder="Mesaj"
+                required
+                minlength="10"
+                maxlength="2000"
+                rows="3"
+              ></textarea>
+              <button type="submit">Gönder ↗</button>
+              <p class="contact-status" id="contact-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Vedat Kaya — Tüm hakları saklıdır</p>
+          <a href="#" class="back-to-top">BACK TO TOP ↑</a>
+        </div>
+      </footer>
+    </main>
+
+    <div class="cv-takeover" aria-hidden="true">
+      <div class="cv-takeover-header">
+        <a
+          href="/Vedat_Kaya_CV.pdf"
+          class="cv-download hover-target"
+          download="Vedat_Kaya_CV.pdf"
+          >PDF İNDİR ↓</a
+        >
+        <button type="button" class="cv-close hover-target">KAPAT ✕</button>
+      </div>
+
+      <div class="cv-layout">
+        <div class="cv-title-area">
+          <h2 class="cv-huge-name cv-anim-item">VEDAT<br />KAYA.</h2>
+          <p class="cv-role cv-anim-item">
+            FRONT-END DEVELOPER<br />& MÜHENDİS ADAYI
+          </p>
+
+          <div class="cv-contact-info cv-anim-item">
+            vedatline@gmail.com<br />
+            Ankara, Türkiye<br />
+            github.com/vedat-kaya
+          </div>
+        </div>
+
+        <div class="cv-details-area">
+          <div class="cv-block cv-anim-item">
+            <h3>EĞİTİM</h3>
+            <div class="cv-entry">
+              <span class="cv-date">Eki. 2026 - Devam Ediyor</span>
+              <h4>Anadolu Üniversitesi</h4>
+              <p>Bilgisayar Programcılığı (Ön Lisans / Açıköğretim)</p>
+            </div>
+          </div>
+          <div class="cv-block cv-anim-item">
+            <h3>PROJELER</h3>
+            <div class="cv-entry">
+              <span class="cv-date">2026</span>
+              <h4>SorSana</h4>
+              <p>
+                Python, Flask, MySQL, Pillow, WTForms. Kullanıcıların klasik
+                testler ve ikili eleme turnuvaları oluşturup çözebileceği,
+                Google OAuth entegreli tam kapsamlı quiz platformu.
+              </p>
+            </div>
+            <div class="cv-entry">
+              <span class="cv-date">2026</span>
+              <h4>Wordi</h4>
+              <p>
+                JavaScript, HTML5, CSS3, Vite, JSON. Dinamik durum ve olay
+                yönetimine sahip, pürüzsüz animasyonlu tek sayfa (SPA) kelime
+                oyunu.
+              </p>
+            </div>
+            <div class="cv-entry">
+              <span class="cv-date">2026</span>
+              <h4>Kişisel Portföy Sitesi</h4>
+              <p>
+                HTML5, CSS3, Vite, GSAP, Lenis. Modern koyu tema, hareket
+                odaklı ve mobil uyumlu arayüz.
+              </p>
+            </div>
+          </div>
+          <div class="cv-block cv-anim-item">
+            <h3>İŞ DENEYİMİ</h3>
+            <div class="cv-entry">
+              <span class="cv-date">2024 - Günümüz</span>
+              <h4>Serbest Çalışma</h4>
+              <p>
+                Bilgisayar bakım, donanım ve sistem kurulumu. Windows kurulumları,
+                donanım montajı ve ağ yapılandırmaları — sistem düşüncesini
+                yazılım işine taşıyorum.
+              </p>
+            </div>
+          </div>
+          <div class="cv-block cv-anim-item">
+            <h3>YETENEKLER & SERTİFİKALAR</h3>
+            <p class="cv-skills">
+              <strong>Yazılım:</strong> Python, JavaScript, SQL (MySQL), HTML5,
+              CSS3, Flask, Vite, GSAP, Lenis<br /><br />
+              <strong>Sertifikalar:</strong> Python Sıfırdan İleri Seviye
+              (Udemy), Bilgisayar İşletmenliği Sertifikası
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bg-music" loop preload="none">
+      <source src="/sarkim.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

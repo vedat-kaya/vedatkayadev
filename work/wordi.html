@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordi — Vedat Kaya</title>
+    <meta
+      name="description"
+      content="Wordi case study: durum yönetimli, animasyonlu tek sayfa kelime oyunu."
+    />
+    <meta name="theme-color" content="#070707" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script src="/intro-gate.js"></script>
+    <meta property="og:title" content="Wordi — Vedat Kaya" />
+    <meta property="og:image" content="/og.jpg" />
+  </head>
+  <body>
+    <div class="cursor-dot"></div>
+
+    <header class="navbar full-navbar">
+      <a href="/" class="nav-left nav-brand">
+        <div class="nav-avatar">
+          <img src="/avatar.webp" alt="" width="84" height="84" />
+          <div class="online-dot"></div>
+        </div>
+        <span class="nav-logo">Vedat Kaya.</span>
+      </a>
+      <div class="nav-links-wrapper">
+        <nav class="nav-center">
+          <a href="/#felsefem">Felsefem</a>
+          <a href="/#projeler">Çalışmalarım</a>
+          <a href="/#iletisim">İletişim</a>
+          <a href="#cv" data-cv>CV ↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <header class="navbar-mini hover-target" id="navbar-mini">
+      <a href="/" class="nav-left nav-brand">
+        <div class="nav-avatar">
+          <img src="/avatar.webp" alt="" width="84" height="84" />
+          <div class="online-dot"></div>
+        </div>
+        <span class="nav-logo">Vedat Kaya.</span>
+      </a>
+      <button class="hamburger-btn" id="mobile-menu-open" type="button" aria-label="Menüyü aç">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <div class="nav-left">
+          <div class="nav-avatar">
+          <img src="/avatar.webp" alt="" width="84" height="84" />
+          <div class="online-dot"></div>
+        </div>
+          <span class="nav-logo">Vedat Kaya.</span>
+        </div>
+        <button class="hamburger-btn" id="mobile-menu-close" type="button" aria-label="Menüyü kapat">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="/#felsefem" class="mobile-link">Felsefem</a>
+        <a href="/#projeler" class="mobile-link">Çalışmalarım</a>
+        <a href="/#iletisim" class="mobile-link">İletişim</a>
+        <a href="#cv" class="mobile-link" data-cv>CV ↗</a>
+      </div>
+    </div>
+
+    <main class="case-page">
+      <article class="case-article">
+        <p class="case-kicker">Case study · 2026 · Front-end</p>
+        <h1 class="case-title">Wordi</h1>
+        <p class="case-lead">
+          Dinamik durum ve olay yönetimine sahip, pürüzsüz animasyonlu tek sayfa
+          kelime oyunu.
+        </p>
+        <div class="case-actions">
+          <a
+            class="case-live"
+            href="https://wordi.pythonanywhere.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Live ↗</a
+          >
+          <a class="case-back" href="/#projeler">← Çalışmalar</a>
+        </div>
+
+        <div class="case-frame">
+          <img src="/wordi.webp" alt="Wordi arayüzü" width="1600" height="900" />
+        </div>
+
+        <div class="case-grid">
+          <section>
+            <h2>Problem</h2>
+            <p>
+              Kelime oyunları çoğu zaman sayfa yenilemeli ve ağır hissettiriyor.
+              Hedef: tarayıcıda kalan, durumu kaybetmeyen, animasyonu bozmayan
+              bir SPA.
+            </p>
+          </section>
+          <section>
+            <h2>Rol</h2>
+            <p>
+              Oyun döngüsü, skor, klavye/girdi ve arayüz geçişlerini tek başına
+              yazdım. Vite ile paket; veri JSON.
+            </p>
+          </section>
+          <section>
+            <h2>Yaklaşım</h2>
+            <p>
+              Merkezi bir durum nesnesi ve olaylar. DOM’u her turda yıkmak yerine
+              değişen parçayı güncellemek. Hareket, puanı değil ritmi taşıyor.
+            </p>
+          </section>
+          <section>
+            <h2>Stack</h2>
+            <p>JavaScript, HTML5, CSS3, Vite, JSON.</p>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <div class="cv-takeover" aria-hidden="true">
+      <div class="cv-takeover-header">
+        <a href="/Vedat_Kaya_CV.pdf" class="cv-download hover-target" download="Vedat_Kaya_CV.pdf">PDF İNDİR ↓</a>
+        <button type="button" class="cv-close hover-target">KAPAT ✕</button>
+      </div>
+      <div class="cv-layout">
+        <div class="cv-title-area">
+          <h2 class="cv-huge-name cv-anim-item">VEDAT<br />KAYA.</h2>
+          <p class="cv-role cv-anim-item">FRONT-END DEVELOPER<br />& MÜHENDİS ADAYI</p>
+          <div class="cv-contact-info cv-anim-item">
+            vedatline@gmail.com<br />Ankara, Türkiye<br />github.com/vedat-kaya
+          </div>
+        </div>
+        <div class="cv-details-area">
+          <div class="cv-block cv-anim-item">
+            <h3>EĞİTİM</h3>
+            <div class="cv-entry">
+              <span class="cv-date">Eki. 2026 - Devam Ediyor</span>
+              <h4>Anadolu Üniversitesi</h4>
+              <p>Bilgisayar Programcılığı (Ön Lisans / Açıköğretim)</p>
+            </div>
+          </div>
+          <div class="cv-block cv-anim-item">
+            <h3>PROJELER</h3>
+            <div class="cv-entry">
+              <span class="cv-date">2026</span>
+              <h4>SorSana</h4>
+              <p>
+                Python, Flask, MySQL, Pillow, WTForms. Kullanıcıların klasik
+                testler ve ikili eleme turnuvaları oluşturup çözebileceği,
+                Google OAuth entegreli tam kapsamlı quiz platformu.
+              </p>
+            </div>
+            <div class="cv-entry">
+              <span class="cv-date">2026</span>
+              <h4>Wordi</h4>
+              <p>
+                JavaScript, HTML5, CSS3, Vite, JSON. Dinamik durum ve olay
+                yönetimine sahip, pürüzsüz animasyonlu tek sayfa (SPA) kelime
+                oyunu.
+              </p>
+            </div>
+            <div class="cv-entry">
+              <span class="cv-date">2026</span>
+              <h4>Kişisel Portföy Sitesi</h4>
+              <p>
+                HTML5, CSS3, Vite, GSAP, Lenis. Modern koyu tema, hareket
+                odaklı ve mobil uyumlu arayüz.
+              </p>
+            </div>
+          </div>
+          <div class="cv-block cv-anim-item">
+            <h3>İŞ DENEYİMİ</h3>
+            <div class="cv-entry">
+              <span class="cv-date">2024 - Günümüz</span>
+              <h4>Serbest Çalışma</h4>
+              <p>
+                Bilgisayar bakım, donanım ve sistem kurulumu. Windows kurulumları,
+                donanım montajı ve ağ yapılandırmaları — sistem düşüncesini
+                yazılım işine taşıyorum.
+              </p>
+            </div>
+          </div>
+          <div class="cv-block cv-anim-item">
+            <h3>YETENEKLER & SERTİFİKALAR</h3>
+            <p class="cv-skills">
+              <strong>Yazılım:</strong> Python, JavaScript, SQL (MySQL), HTML5,
+              CSS3, Flask, Vite, GSAP, Lenis<br /><br />
+              <strong>Sertifikalar:</strong> Python Sıfırdan İleri Seviye
+              (Udemy), Bilgisayar İşletmenliği Sertifikası
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/case.js"></script>
+  </body>
+</html>
