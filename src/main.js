@@ -149,7 +149,13 @@ function waitForVideoReady(video, onProgress) {
 }
 
 function canPlayIntro(video, skipped) {
-  return !skipped && !isReturnVisit && !reduceMotionNow && Boolean(video);
+  return (
+    !skipped &&
+    !isReturnVisit &&
+    !reduceMotionNow &&
+    isDesktop() &&
+    Boolean(video)
+  );
 }
 
 async function playIntroReward(video, preloader) {
@@ -157,10 +163,6 @@ async function playIntroReward(video, preloader) {
   const counterText = document.querySelector(".counter");
   gsap.to(counterText, { opacity: 0, duration: 0.35 });
   gsap.to(video, { opacity: 1, duration: 0.45 });
-  video.muted = true;
-  video.playsInline = true;
-  video.setAttribute("playsinline", "");
-  video.setAttribute("webkit-playsinline", "");
   try {
     await video.play();
   } catch {
@@ -209,8 +211,9 @@ async function runPreloader() {
   lenis.stop();
 
   const heroImages = ["/sorsana.webp", "/wordi.webp", "/avatar.webp"];
-  const imageShare = 0.35;
-  const videoShare = 0.65;
+  const playVideoLater = isDesktop();
+  const imageShare = playVideoLater ? 0.35 : 1;
+  const videoShare = playVideoLater ? 0.65 : 0;
   const imageUnit = imageShare / heroImages.length;
   let imagesLoaded = 0;
   let videoLoaded = 0;
@@ -241,6 +244,11 @@ async function runPreloader() {
     });
   }
 
+  if (!playVideoLater && introVideo) {
+    introVideo.removeAttribute("src");
+    introVideo.load();
+  }
+
   const imageJobs = heroImages.map((src) =>
     loadImage(src).then(() => {
       imagesLoaded += 1;
@@ -248,16 +256,18 @@ async function runPreloader() {
     }),
   );
 
-  const videoJob = waitForVideoReady(introVideo, (ratio) => {
-    videoLoaded = Math.min(1, ratio);
-    render();
-  }).then((status) => {
-    if (status === "ready" || status === "timeout" || status === "error") {
-      if (status !== "ready") videoLoaded = 1;
-      render();
-    }
-    return status;
-  });
+  const videoJob = playVideoLater
+    ? waitForVideoReady(introVideo, (ratio) => {
+        videoLoaded = Math.min(1, ratio);
+        render();
+      }).then((status) => {
+        if (status === "ready" || status === "timeout" || status === "error") {
+          if (status !== "ready") videoLoaded = 1;
+          render();
+        }
+        return status;
+      })
+    : Promise.resolve("skip");
 
   await Promise.all([...imageJobs, videoJob]);
   setCounter(counterText, 100);

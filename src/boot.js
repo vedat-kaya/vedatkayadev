@@ -10,7 +10,34 @@ export const reduceMotion = window.matchMedia(
 
 export const isDesktop = () => window.matchMedia("(min-width: 769px)").matches;
 
+function nativeScroller() {
+  const noop = () => {};
+  return {
+    start: noop,
+    stop: noop,
+    raf: noop,
+    on: noop,
+    scrollTo(target, opts = {}) {
+      const behavior =
+        reduceMotion || opts.duration === 0 ? "auto" : "smooth";
+      if (typeof target === "number") {
+        window.scrollTo({ top: target, behavior });
+        return;
+      }
+      if (target && typeof target.getBoundingClientRect === "function") {
+        const top =
+          target.getBoundingClientRect().top +
+          window.scrollY +
+          (opts.offset || 0);
+        window.scrollTo({ top, behavior });
+      }
+    },
+  };
+}
+
 export function createLenis() {
+  if (!isDesktop()) return nativeScroller();
+
   const lenis = new Lenis({
     duration: reduceMotion ? 0 : 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -246,8 +273,9 @@ export function initCV(lenis, cursorDot) {
     cvTakeover.setAttribute("aria-hidden", "false");
     if (cursorDot) cursorDot.style.opacity = "0";
 
-    if (reduceMotion) {
-      gsap.set(cvTakeover, { y: "0%" });
+    const mobile = !isDesktop();
+    if (reduceMotion || mobile) {
+      gsap.set(cvTakeover, { clearProps: "transform", y: 0 });
       gsap.set(cvAnimItems, { y: 0, opacity: 1 });
     } else {
       gsap.to(cvTakeover, { y: "0%", duration: 1, ease: "power4.inOut" });
@@ -266,8 +294,9 @@ export function initCV(lenis, cursorDot) {
     }
 
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     lenis.stop();
-    cvTakeover.addEventListener("wheel", handleTakeoverScroll);
+    if (!mobile) cvTakeover.addEventListener("wheel", handleTakeoverScroll);
     cvClose.focus();
   };
 
@@ -277,12 +306,13 @@ export function initCV(lenis, cursorDot) {
       cvTakeover.classList.remove("active");
       cvTakeover.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
       if (cursorDot && isDesktop()) cursorDot.style.opacity = "1";
       lenis.start();
     };
 
-    if (reduceMotion) {
-      gsap.set(cvTakeover, { y: "100%" });
+    if (reduceMotion || !isDesktop()) {
+      gsap.set(cvTakeover, { clearProps: "transform" });
       finish();
       return;
     }

@@ -754,7 +754,7 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   height: 100dvh;
   background-color: #030303;
@@ -972,6 +972,14 @@ body::before {
   .cv-layout {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .cv-takeover {
+    transform: none !important;
+    visibility: hidden;
+  }
+  .cv-takeover.active {
+    visibility: visible;
+    pointer-events: auto;
   }
   .cv-title-area {
     position: static;
