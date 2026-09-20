@@ -149,14 +149,7 @@ function waitForVideoReady(video, onProgress) {
 }
 
 function canPlayIntro(video, skipped) {
-  return (
-    !skipped &&
-    !isReturnVisit &&
-    !reduceMotionNow &&
-    window.innerWidth > 768 &&
-    Boolean(video) &&
-    video.readyState >= 3
-  );
+  return !skipped && !isReturnVisit && !reduceMotionNow && Boolean(video);
 }
 
 async function playIntroReward(video, preloader) {
@@ -164,6 +157,10 @@ async function playIntroReward(video, preloader) {
   const counterText = document.querySelector(".counter");
   gsap.to(counterText, { opacity: 0, duration: 0.35 });
   gsap.to(video, { opacity: 1, duration: 0.45 });
+  video.muted = true;
+  video.playsInline = true;
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
   try {
     await video.play();
   } catch {

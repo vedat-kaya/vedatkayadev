@@ -232,14 +232,16 @@ export function initCV(lenis, cursorDot) {
 
   const triggers = document.querySelectorAll("[data-cv]");
   const cvAnimItems = gsap.utils.toArray(".cv-anim-item");
+  const cvScroller =
+    cvTakeover.querySelector(".cv-takeover-scroll") || cvTakeover;
 
   const handleTakeoverScroll = (e) => {
-    cvTakeover.scrollTop += e.deltaY;
+    cvScroller.scrollTop += e.deltaY;
   };
 
   const openCV = (e) => {
     if (e) e.preventDefault();
-    cvTakeover.scrollTop = 0;
+    cvScroller.scrollTop = 0;
     cvTakeover.classList.add("active");
     cvTakeover.setAttribute("aria-hidden", "false");
     if (cursorDot) cursorDot.style.opacity = "0";

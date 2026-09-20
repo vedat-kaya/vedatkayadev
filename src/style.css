@@ -755,17 +755,26 @@ body::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  height: 100dvh;
   background-color: #030303;
   z-index: 10000;
   display: flex;
   flex-direction: column;
-  padding: 4vw 6vw;
   transform: translateY(100%);
   pointer-events: none;
+  overflow: hidden;
+  cursor: auto !important;
+}
+.cv-takeover-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  cursor: auto !important;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  padding: 4vw 6vw;
 }
 .cv-takeover.active {
   pointer-events: all;
