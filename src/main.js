@@ -210,7 +210,7 @@ async function runPreloader() {
   document.body.style.overflow = "hidden";
   lenis.stop();
 
-  const heroImages = ["/sorsana.webp", "/wordi.webp", "/avatar.webp"];
+  const heroImages = ["/sorsana.jpg", "/wordi.jpg", "/avatar.webp"];
   const playVideoLater = isDesktop();
   const imageShare = playVideoLater ? 0.35 : 1;
   const videoShare = playVideoLater ? 0.65 : 0;
