@@ -385,7 +385,7 @@ export function initContactForm() {
       }
       setStatus("Gönderilemedi. Metni kontrol et veya e-posta kullan.", "is-err");
     } catch {
-      setStatus("Bağlantı yok. vedatline@gmail.com", "is-err");
+      setStatus("Bağlantı yok. hello@vedatkaya.com", "is-err");
     } finally {
       busy = false;
       if (button) button.disabled = false;
